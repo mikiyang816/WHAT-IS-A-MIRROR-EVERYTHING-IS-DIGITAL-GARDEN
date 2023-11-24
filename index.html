@@ -92,6 +92,32 @@
             50% { transform: translateY(-20px); }
         }
       
+       .comment-box {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .comment-box textarea {
+        width: 80%;
+        height: 100px;
+    }
+
+    .comment-box button {
+        display: block;
+        margin: 10px auto;
+        padding: 5px 15px;
+    }
+
+    #commentsSection {
+        margin-top: 20px;
+    }
+
+    #commentsSection div {
+        background-color: #f0f0f0;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+      
     </style>
 </head>
 <body>
@@ -107,6 +133,11 @@
         <p class="mirror-meaning">Trust - Song Dong asked someone on the street to do a haircut for him and he did not look at the mirror once to check if it is good. Mirror is trust.</p>
         <p class="mirror-meaning">Love - My dad says that he had so much similar habits with my mom and have acquired those since they started dating, that my mom is now a mirror of him.</p>
         <p class="mirror-meaning">... so, what does mirror mean to you? Could be a noun, an adjective, a phrase... you comment.</p>
+     <div class="comment-box">
+            <textarea id="userComment" placeholder="Type your comment here..."></textarea>
+            <button onclick="postComment()">Comment</button> 
+        </div>
+        <div id="commentsSection"></div> 
     </div>
 </div>
 
@@ -137,11 +168,9 @@
 
     window.onload = changeNoun;
   
-     // Fetching nouns from an external website
-    fetch('your-api-url')
+    fetch('https://7esl.com/list-of-nouns/')
         .then(response => response.json())
         .then(data => {
-            // Assuming 'data' is an array of nouns
             changeNoun(data);
         })
         .catch(error => console.error('Error fetching nouns:', error));
@@ -153,48 +182,17 @@
         rightNoun.textContent = nouns[Math.floor(Math.random() * nouns.length)];
     }
 
-    // Function to post a comment
-    function postComment() {
+     function postComment() {
         const userComment = document.getElementById('userComment').value;
         const commentsSection = document.getElementById('commentsSection');
         if (userComment.trim()) {
             const commentDiv = document.createElement('div');
             commentDiv.textContent = userComment;
             commentsSection.appendChild(commentDiv);
-            document.getElementById('userComment').value = ''; // Clear the textarea
+            document.getElementById('userComment').value = ''; 
         }
     }
 </script>
-  
-  <style>
-    /* ... existing styles ... */
-
-    .comment-box {
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    .comment-box textarea {
-        width: 80%;
-        height: 100px;
-    }
-
-    .comment-box button {
-        display: block;
-        margin: 10px auto;
-        padding: 5px 15px;
-    }
-
-    #commentsSection {
-        margin-top: 20px;
-    }
-
-    #commentsSection div {
-        background-color: #f0f0f0;
-        padding: 10px;
-        margin-bottom: 10px;
-    }
-</style>
 
 </body>
 </html>
