@@ -151,6 +151,8 @@
       }
     </style>
   </head>
+
+
   <body>
     <div class="background-image"></div>
     <div class="text-container">
@@ -181,6 +183,8 @@
           <audio id="backgroundMusic" src="sea.mp3"></audio>
         </div>
       </div>
+
+
       <script>
         const video = document.getElementById('camera');
 
@@ -211,6 +215,31 @@
 
           document.getElementById('userComment').value = '';
         }
+
+        function removeOldComments() {
+          const commentsSection = document.getElementById('commentsSection');
+          const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+          const currentTime = new Date().getTime();
+          const twentyFourHoursAgo = currentTime - (24 * 60 * 60 * 1000);
+
+          for (let i = comments.length - 1; i >= 0; i--) {
+            if (comments[i].timestamp < twentyFourHoursAgo) {
+              comments.splice(i, 1);
+            }
+          }
+
+          localStorage.setItem('comments', JSON.stringify(comments));
+
+          commentsSection.innerHTML = '';
+
+          for (const comment of comments) {
+            const commentDiv = document.createElement('div');
+            commentDiv.textContent = comment.text;
+            commentsSection.appendChild(commentDiv);
+          }
+        }
+
+        window.onload = removeOldComments;
 
         function toggleMusic() {
           const music = document.getElementById("backgroundMusic");
