@@ -5,7 +5,6 @@
     <title>What is A Mirror? Everything is.</title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;400;500&display=swap");
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap'); 
 
         body, html {
             margin: 0;
@@ -84,7 +83,7 @@
 
          .mirror-meaning {
             font-size: 1em;
-            font-family: 'Roboto', sans-serif; 
+            font-family: "Roboto", sans-serif; 
         }
 
         @keyframes float {
@@ -166,7 +165,7 @@
                 video.srcObject = stream;
             })
             .catch(function (error) {
-                console.log("Something went wrong with the webcam!");
+                console.log("uh oh, give it a second");
             });
     }
 
@@ -226,9 +225,9 @@
   
    window.onload = function() {
         changeNoun();
-        loadComments(); // Load comments on page load
+        loadComments(); 
     };
-    }
+  
 </script>
 
 </body>
