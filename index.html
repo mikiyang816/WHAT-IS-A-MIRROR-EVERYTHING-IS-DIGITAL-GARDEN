@@ -46,7 +46,7 @@
       }
 
       h2 {
-        font-size: 35;
+        font-size: 35px;
         font-weight: 700;
       }
 
@@ -72,12 +72,12 @@
       }
 
       .mirror-meaning {
-        font-size: 15;
+        font-size: 15px;
         font-family: "Bold 700", Quicksand;
       }
 
       .mirror-meaning-asking {
-        font-size: 20;
+        font-size: 20px;
         font-family: "Thin-100", Kanit;
       }
 
@@ -127,11 +127,15 @@
       }
 
       .sound-icon {
-        position: relative;
-        left: 5px;
-        bottom: 250px;
-        z-index: 50;
-        width: 1px;
+        position: fixed;
+        left: 30px;
+        bottom: 570px;
+        z-index: 10;
+      }
+
+      .sound-icon img {
+        width: 60px;
+        height: 60px;
       }
 
       @keyframes float {
@@ -142,14 +146,11 @@
         }
 
         50% {
-          transform: translateY(-20px);
+          transform: translateY(-50px);
         }
       }
     </style>
   </head>
-
-
-
   <body>
     <div class="background-image"></div>
     <div class="text-container">
@@ -169,23 +170,17 @@
           <button onclick="postComment()">Enrich my thinking and yours with a comment!</button>
         </div>
         <div id="commentsSection"></div>
-
-
         <div class="floating-text left">?</div>
         <div class="floating-text left" style="top: 40%;">?</div>
         <div class="floating-text left" style="top: 80%;">?</div>
         <div class="floating-text right">?</div>
         <div class="floating-text right" style="top: 40%;">?</div>
         <div class="floating-text right" style="top: 80%;">?</div>
-
         <div class="sound-icon" onclick="toggleMusic()">
           <img src="speaker-filled-audio-tool.png" alt="get some music!">
           <audio id="backgroundMusic" src="sea.mp3"></audio>
         </div>
-
       </div>
-
-
       <script>
         const video = document.getElementById('camera');
 
@@ -197,7 +192,6 @@
               video.srcObject = stream;
             });
         }
-
 
         function postComment() {
           const userComment = document.getElementById('userComment').value;
@@ -218,7 +212,6 @@
           document.getElementById('userComment').value = '';
         }
 
-
         function toggleMusic() {
           const music = document.getElementById("backgroundMusic");
           if (music.paused) {
@@ -228,5 +221,6 @@
           }
         }
       </script>
+    </div>
   </body>
 </html>
