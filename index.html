@@ -7,6 +7,7 @@
       @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;400;500&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ephesis&family=Nosifer&family=Open+Sans:ital,wght@1,300&family=Oswald:wght@700&family=Pixelify+Sans&family=Poppins:wght@200&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ephesis&family=Nosifer&family=Open+Sans:ital,wght@1,300&family=Oswald:wght@700&family=Pixelify+Sans&family=Poppins:wght@200&family=Quicksand:wght@700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ephesis&family=Inter:wght@900&family=Nosifer&family=Open+Sans:ital,wght@1,300&family=Oswald:wght@700&family=Pixelify+Sans&family=Poppins:wght@200&family=Quicksand:wght@700&display=swap");
 
       body,
       html {
@@ -29,25 +30,38 @@
         z-index: -1;
       }
 
+      .mirror-diary {
+        position: relative;
+        padding: 30px;
+      }
+
+      h1 {
+        font-size: 30px;
+        font-weight: 400;
+        font-family: "Black-900", Inter;
+        text-align: center;
+        color: white;
+      }
+
       .text-container {
         position: relative;
         text-align: center;
         color: white;
-        padding: 100px;
+        padding: 30px;
         min-height: 100vh;
       }
 
-      h1,
-      h2 {
+      h2,
+      h3 {
         margin: 10px 0;
         font-size: 1.5em;
         font-weight: 400;
         font-family: "Thin-100", Kanit;
       }
 
-      h2 {
+      h3 {
         font-size: 35px;
-        font-weight: 700;
+        font-weight: 500;
       }
 
       #camera {
@@ -61,6 +75,14 @@
 
       .inspo-container {
         margin-top: 90px;
+      }
+
+      h4 {
+        margin: 10px 0;
+        font-size: 45px;
+        ;
+        font-weight: 500;
+        font-family: "Thin-100", Kanit;
       }
 
       .boxed-content {
@@ -155,12 +177,14 @@
 
   <body>
     <div class="background-image"></div>
+    <div class="mirror-diary"></div>
+    <h1>Your Journal to Understand What is A Mirror</h1>
     <div class="text-container">
-      <h1>What is a mirror?</h1>
-      <h2>Everything is a mirror. -Song Dong</h2>
+      <h2>What is a mirror?</h2>
+      <h3>Everything is a mirror. -Song Dong</h3>
       <video id="camera" autoplay></video>
       <div class="inspo-container">
-        <h2>Inspo</h2>
+        <h4>Inspo</h4>
         <div class="inspo-text" id="inspoWord"></div>
         <div class="boxed-content">
           <p class="mirror-meaning">Trust - Song Dong asked someone on the street to do a haircut for him and he did not look at the mirror once to check if it is good. Mirror is trust.</p>
