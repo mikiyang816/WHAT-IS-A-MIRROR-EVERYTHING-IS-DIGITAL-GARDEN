@@ -6,6 +6,7 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;400;500&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ephesis&family=Nosifer&family=Open+Sans:ital,wght@1,300&family=Oswald:wght@700&family=Pixelify+Sans&family=Poppins:wght@200&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ephesis&family=Nosifer&family=Open+Sans:ital,wght@1,300&family=Oswald:wght@700&family=Pixelify+Sans&family=Poppins:wght@200&family=Quicksand:wght@700&display=swap");
 
       body,
       html {
@@ -45,7 +46,7 @@
       }
 
       h2 {
-        font-size: 2em;
+        font-size: 35;
         font-weight: 700;
       }
 
@@ -54,18 +55,25 @@
         width: 100%;
         max-width: 640px;
         margin: 20px auto;
-        border: 5px solid lightblue;
+        border: 5px solid #03dbfc;
         box-sizing: border-box;
       }
 
       .inspo-container {
         margin-top: 90px;
+      }
 
+      .boxed-content {
+        border: 2px dashed #03dbfc;
+        padding: 10px;
+        margin: 20px auto;
+        width: 80%;
+        text-align: center;
       }
 
       .mirror-meaning {
-        font-size: 25;
-        font-family: "Regular-400", Ephesis;
+        font-size: 15;
+        font-family: "Bold 700", Quicksand;
       }
 
       .mirror-meaning-asking {
@@ -88,6 +96,7 @@
         display: block;
         margin: 10px auto;
         padding: 5px 15px;
+        background-image: linear-gradient(#a2d8e4 0%, #52aac8 41%, #1f94af 85%);
       }
 
       #commentsSection {
@@ -95,23 +104,53 @@
       }
 
       #commentsSection div {
-        background-color: darkblue;
-        color: lightblue;
+        background-image: linear-gradient(#a2d8e4 0%, #52aac8 41%, #1f94af 85%);
+        color: white;
         padding: 10px;
         margin-bottom: 10px;
       }
 
-      .boxed-content {
-        border: 2px dashed lightblue;
-        padding: 10px;
-        margin: 20px auto;
-        width: 80%;
-        text-align: center;
+      .floating-text {
+        position: fixed;
+        font-size: 2em;
+        color: lightblue;
+        animation: float 6s ease-in-out infinite;
+        font-family: "Regular-400", Ephesis;
+      }
+
+      .left {
+        left: 12px;
+      }
+
+      .right {
+        right: 12px;
+      }
+
+      .sound-icon {
+        position: relative;
+        left: 5px;
+        bottom: 250px;
+        z-index: 50;
+        width: 1px;
+      }
+
+      @keyframes float {
+
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-20px);
+        }
       }
     </style>
   </head>
-  <body>
 
+
+
+  <body>
     <div class="background-image"></div>
     <div class="text-container">
       <h1>What is a mirror?</h1>
@@ -127,76 +166,47 @@
         <p class="mirror-meaning-asking">... so, what does mirror mean to you? Could be a noun, an adjective, a phrase... you comment.</p>
         <div class="comment-box">
           <textarea id="userComment" placeholder="Type your comment here..."></textarea>
-          <button onclick="postComment()">Let people know how I think</button>
+          <button onclick="postComment()">Enrich my thinking and yours with a comment!</button>
         </div>
         <div id="commentsSection"></div>
+
+
+        <div class="floating-text left">?</div>
+        <div class="floating-text left" style="top: 40%;">?</div>
+        <div class="floating-text left" style="top: 80%;">?</div>
+        <div class="floating-text right">?</div>
+        <div class="floating-text right" style="top: 40%;">?</div>
+        <div class="floating-text right" style="top: 80%;">?</div>
+
+        <div class="sound-icon" onclick="toggleMusic()">
+          <img src="speaker-filled-audio-tool.png" alt="get some music!">
+          <audio id="backgroundMusic" src="sea.mp3"></audio>
+        </div>
+
       </div>
-    </div>
 
-    <div class="side-text left" id="leftNoun"></div>
-    <div class="side-text right" id="rightNoun"></div>
 
-    <script>
-      const video = document.getElementById('camera');
+      <script>
+        const video = document.getElementById('camera');
 
-      if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({
-            video: true
-          })
-          .then(function(stream) {
-            video.srcObject = stream;
-          })
-          .catch(function(error) {
-            console.log("uh oh, give it a second please.");
-          });
-      }
+        if (navigator.mediaDevices.getUserMedia) {
+          navigator.mediaDevices.getUserMedia({
+              video: true
+            })
+            .then(function(stream) {
+              video.srcObject = stream;
+            });
+        }
 
-      const nouns = ["Love", "Trust", "Hope", "Joy", "Peace"];
 
-      function changeNoun() {
-        const leftNoun = document.getElementById('leftNoun');
-        const rightNoun = document.getElementById('rightNoun');
-        leftNoun.textContent = nouns[Math.floor(Math.random() * nouns.length)];
-        rightNoun.textContent = nouns[Math.floor(Math.random() * nouns.length)];
-      }
-
-      window.onload = changeNoun;
-
-      fetch('https://7esl.com/list-of-nouns/')
-        .then(response => response.json())
-        .then(data => {
-          changeNoun(data);
-        })
-        .catch(error => console.error('Error fetching nouns:', error));
-
-      function changeNoun(nouns) {
-        const leftNoun = document.getElementById('leftNoun');
-        const rightNoun = document.getElementById('rightNoun');
-        leftNoun.textContent = nouns[Math.floor(Math.random() * nouns.length)];
-        rightNoun.textContent = nouns[Math.floor(Math.random() * nouns.length)];
-      }
-
-      function loadComments() {
-        const comments = JSON.parse(localStorage.getItem('comments') || '[]');
-        const commentsSection = document.getElementById('commentsSection');
-        const currentTime = new Date().getTime();
-
-        comments.forEach(comment => {
-          if (currentTime - comment.timestamp < 24 * 60 * 60 * 1000) {
+        function postComment() {
+          const userComment = document.getElementById('userComment').value;
+          const commentsSection = document.getElementById('commentsSection');
+          if (userComment.trim()) {
             const commentDiv = document.createElement('div');
-            commentDiv.textContent = comment.text;
+            commentDiv.textContent = userComment;
             commentsSection.appendChild(commentDiv);
           }
-        });
-      }
-
-      function postComment() {
-        const userComment = document.getElementById('userComment').value;
-        const commentsSection = document.getElementById('commentsSection');
-        if (userComment.trim()) {
-          const commentDiv = document.createElement('div');
-          commentDiv.textContent = userComment;
-          commentsSection.appendChild(commentDiv);
 
           const comments = JSON.parse(localStorage.getItem('comments') || '[]');
           comments.push({
@@ -207,13 +217,16 @@
 
           document.getElementById('userComment').value = '';
         }
-      }
 
-      window.onload = function() {
-        changeNoun();
-        loadComments();
-      };
-    </script>
 
+        function toggleMusic() {
+          const music = document.getElementById("backgroundMusic");
+          if (music.paused) {
+            music.play();
+          } else {
+            music.pause();
+          }
+        }
+      </script>
   </body>
 </html>
