@@ -1,235 +1,219 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
+  <head>
     <meta charset="utf-8">
-    <title>What is A Mirror? Everything is.</title>
+    <title>What is A Mirror? Everything is A Mirror.</title>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;400;500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;400;500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ephesis&family=Nosifer&family=Open+Sans:ital,wght@1,300&family=Oswald:wght@700&family=Pixelify+Sans&family=Poppins:wght@200&display=swap");
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow-x: hidden;
-        }
-
-        .background-image {
-            background-image: url("deepocean.jpg");
-            position: fixed; 
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            z-index: -1; 
-        }
-
-        .text-container {
-            position: relative;
-            text-align: center;
-            color: white;
-            padding: 20px;
-            min-height: 100vh; 
-        }
-
-        h1, h2 {
-            margin: 10px 0;
-            font-size: 1.5em;
-            font-weight: 400;
-            font-family: "Thin-100", Kanit;
-        }
-
-        h2 {
-            font-size: 2em;
-            font-weight: 700;
-        }
-
-        #camera {
-            display: block;
-            width: 100%;
-            max-width: 640px;
-            margin: 20px auto;
-            border: 5px solid lightblue;
-            box-sizing: border-box;
-        }
-
-        .inspo-container {
-            margin-top: 20px;
-        }
-
-        .side-text {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.2em;
-           animation: float 5s ease-in-out infinite;
-        }
-
-        .left {
-            left: 10px;
-            animation: float 5s ease-in-out infinite; 
-            color: lightblue;
-            font-family: "Thin-100", Kanit;
-        }
-
-        .right {
-            right: 10px;
-            animation: float 5s ease-in-out infinite; 
-       		     color: lightblue;
-            font-family: "Thin-100", Kanit;
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow-x: hidden;
       }
 
-         .mirror-meaning {
-            font-size: 1em;
-            font-family: "Roboto", sans-serif; 
-        }
+      .background-image {
+        background-image: url("deepocean.jpg");
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+      }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-      
-       .comment-box {
+      .text-container {
+        position: relative;
+        text-align: center;
+        color: white;
+        padding: 100px;
+        min-height: 100vh;
+      }
+
+      h1,
+      h2 {
+        margin: 10px 0;
+        font-size: 1.5em;
+        font-weight: 400;
+        font-family: "Thin-100", Kanit;
+      }
+
+      h2 {
+        font-size: 2em;
+        font-weight: 700;
+      }
+
+      #camera {
+        display: block;
+        width: 100%;
+        max-width: 640px;
+        margin: 20px auto;
+        border: 5px solid lightblue;
+        box-sizing: border-box;
+      }
+
+      .inspo-container {
+        margin-top: 90px;
+
+      }
+
+      .mirror-meaning {
+        font-size: 25;
+        font-family: "Regular-400", Ephesis;
+      }
+
+      .mirror-meaning-asking {
+        font-size: 20;
+        font-family: "Thin-100", Kanit;
+      }
+
+      .comment-box {
         margin-top: 20px;
         text-align: center;
-    }
+        font-family: "Regular-400", Ephesis;
+      }
 
-    .comment-box textarea {
+      .comment-box textarea {
         width: 80%;
         height: 100px;
-    }
+      }
 
-    .comment-box button {
+      .comment-box button {
         display: block;
         margin: 10px auto;
         padding: 5px 15px;
-    }
+      }
 
-    #commentsSection {
+      #commentsSection {
         margin-top: 20px;
-    }
+      }
 
-        #commentsSection div {
-            background-color: darkblue;
-            color: lightblue;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-      
-       .boxed-content {
-            border: 2px dashed lightblue;
-            padding: 10px;
-            margin: 20px auto;
-            width: 80%;
-            text-align: center;
-        }
-      
+      #commentsSection div {
+        background-color: darkblue;
+        color: lightblue;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .boxed-content {
+        border: 2px dashed lightblue;
+        padding: 10px;
+        margin: 20px auto;
+        width: 80%;
+        text-align: center;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
 
-<div class="background-image"></div>
-<div class="text-container">
-    <h1>What is a mirror?</h1>
-    <h2>Everything is a mirror. -Song Dong</h2>
-    <video id="camera" autoplay></video>
-    <div class="inspo-container">
+    <div class="background-image"></div>
+    <div class="text-container">
+      <h1>What is a mirror?</h1>
+      <h2>Everything is a mirror. -Song Dong</h2>
+      <video id="camera" autoplay></video>
+      <div class="inspo-container">
         <h2>Inspo</h2>
         <div class="inspo-text" id="inspoWord"></div>
-        <p class="mirror-meaning">Trust - Song Dong asked someone on the street to do a haircut for him and he did not look at the mirror once to check if it is good. Mirror is trust.</p>
-        <p class="mirror-meaning">Love - My dad says that he had so much similar habits with my mom and have acquired those since they started dating, that my mom is now a mirror of him.</p>
-        <p class="mirror-meaning">... so, what does mirror mean to you? Could be a noun, an adjective, a phrase... you comment.</p>
-      <div class="boxed-content">
-        <p class="mirror-meaning">Trust - Song Dong asked someone on the street to do a haircut for him and he did not look at the mirror once to check if it is good. Mirror is trust.</p>
-        <p class="mirror-meaning">Love - My dad says that he had so much similar habits with my mom and have acquired those since they started dating, that my mom is now a mirror of him.</p>
-    </div>
-     <div class="comment-box">
-            <textarea id="userComment" placeholder="Type your comment here..."></textarea>
-            <button onclick="postComment()">Comment</button> 
+        <div class="boxed-content">
+          <p class="mirror-meaning">Trust - Song Dong asked someone on the street to do a haircut for him and he did not look at the mirror once to check if it is good. Mirror is trust.</p>
+          <p class="mirror-meaning">Love - My dad says that he had so much similar habits with my mom and have acquired those since they started dating, that my mom is now a mirror of him.</p>
         </div>
-        <div id="commentsSection"></div> 
+        <p class="mirror-meaning-asking">... so, what does mirror mean to you? Could be a noun, an adjective, a phrase... you comment.</p>
+        <div class="comment-box">
+          <textarea id="userComment" placeholder="Type your comment here..."></textarea>
+          <button onclick="postComment()">Let people know how I think</button>
+        </div>
+        <div id="commentsSection"></div>
+      </div>
     </div>
-</div>
 
-<div class="side-text left" id="leftNoun"></div>
-<div class="side-text right" id="rightNoun"></div>
+    <div class="side-text left" id="leftNoun"></div>
+    <div class="side-text right" id="rightNoun"></div>
 
-<script>
-    const video = document.getElementById('camera');
+    <script>
+      const video = document.getElementById('camera');
 
-    if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function (stream) {
-                video.srcObject = stream;
-            })
-            .catch(function (error) {
-                console.log("uh oh, give it a second");
-            });
-    }
+      if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({
+            video: true
+          })
+          .then(function(stream) {
+            video.srcObject = stream;
+          })
+          .catch(function(error) {
+            console.log("uh oh, give it a second please.");
+          });
+      }
 
-    const nouns = ["Love", "Trust", "Hope", "Joy", "Peace"]; 
+      const nouns = ["Love", "Trust", "Hope", "Joy", "Peace"];
 
-    function changeNoun() {
+      function changeNoun() {
         const leftNoun = document.getElementById('leftNoun');
         const rightNoun = document.getElementById('rightNoun');
         leftNoun.textContent = nouns[Math.floor(Math.random() * nouns.length)];
         rightNoun.textContent = nouns[Math.floor(Math.random() * nouns.length)];
-    }
+      }
 
-    window.onload = changeNoun;
-  
-    fetch('https://7esl.com/list-of-nouns/')
+      window.onload = changeNoun;
+
+      fetch('https://7esl.com/list-of-nouns/')
         .then(response => response.json())
         .then(data => {
-            changeNoun(data);
+          changeNoun(data);
         })
         .catch(error => console.error('Error fetching nouns:', error));
-    function changeNoun(nouns) {
+
+      function changeNoun(nouns) {
         const leftNoun = document.getElementById('leftNoun');
         const rightNoun = document.getElementById('rightNoun');
         leftNoun.textContent = nouns[Math.floor(Math.random() * nouns.length)];
         rightNoun.textContent = nouns[Math.floor(Math.random() * nouns.length)];
-    }
+      }
 
-  function loadComments() {
+      function loadComments() {
         const comments = JSON.parse(localStorage.getItem('comments') || '[]');
         const commentsSection = document.getElementById('commentsSection');
         const currentTime = new Date().getTime();
 
         comments.forEach(comment => {
-            if (currentTime - comment.timestamp < 24 * 60 * 60 * 1000) {
-                const commentDiv = document.createElement('div');
-                commentDiv.textContent = comment.text;
-                commentsSection.appendChild(commentDiv);
-            }
+          if (currentTime - comment.timestamp < 24 * 60 * 60 * 1000) {
+            const commentDiv = document.createElement('div');
+            commentDiv.textContent = comment.text;
+            commentsSection.appendChild(commentDiv);
+          }
         });
-    }
-  
-       function postComment() {
+      }
+
+      function postComment() {
         const userComment = document.getElementById('userComment').value;
         const commentsSection = document.getElementById('commentsSection');
         if (userComment.trim()) {
-            const commentDiv = document.createElement('div');
-            commentDiv.textContent = userComment;
-            commentsSection.appendChild(commentDiv);
+          const commentDiv = document.createElement('div');
+          commentDiv.textContent = userComment;
+          commentsSection.appendChild(commentDiv);
 
-            const comments = JSON.parse(localStorage.getItem('comments') || '[]');
-            comments.push({ text: userComment, timestamp: new Date().getTime() });
-            localStorage.setItem('comments', JSON.stringify(comments));
+          const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+          comments.push({
+            text: userComment,
+            timestamp: new Date().getTime()
+          });
+          localStorage.setItem('comments', JSON.stringify(comments));
 
-            document.getElementById('userComment').value = '';
+          document.getElementById('userComment').value = '';
         }
-    }
-  
-   window.onload = function() {
+      }
+
+      window.onload = function() {
         changeNoun();
-        loadComments(); 
-    };
-  
-</script>
+        loadComments();
+      };
+    </script>
 
-</body>
+  </body>
 </html>
-
